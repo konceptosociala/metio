@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="my-language">
+  <!-- Define the comments style -->
+  <style name="comment" style="comment"/>
+  
+  <!-- Define the keywords style -->
+  <style name="keyword" style="keyword"/>
+  
+  <!-- Define the string style -->
+  <style name="string" style="string"/>
+  
+  <!-- Define the number style -->
+  <style name="number" style="number"/>
+  
+  <!-- Define the operator style -->
+  <style name="operator" style="operator"/>
+  
+  <!-- Define the identifier style -->
+  <style name="identifier" style="identifier"/>
+</language>
