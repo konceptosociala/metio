@@ -6,6 +6,7 @@ edition = "2021"
 [dependencies]
 glib = "0.17.0"
 gtk = "0.17.0"
+gdk = "0.17.0"
 sourceview4 = "0.4.0"
 
 despero = { path = "../despero", default-features = false, features = ["gtk"] }

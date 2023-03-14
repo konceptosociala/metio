@@ -1,8 +1,9 @@
+use gtk::{CssProvider, StyleContext};
 use gtk::prelude::*;
 use sourceview4::{prelude::*};
 use sourceview4 as gtksv;
 
-pub fn build_editor(application: &gtk::Application){
+pub fn build_code_editor(application: &gtk::Application){
     let glade_src = include_str!("../../layouts/editor.glade");    
     let builder = gtk::Builder::from_string(glade_src);
     
@@ -35,10 +36,19 @@ pub fn build_editor(application: &gtk::Application){
     window.show_all();
 }
 
-#[no_mangle]
-pub extern "C" fn c_build_editor(app_ptr: *mut gtk::ffi::GtkApplication) {
-    unsafe {
-        let app = &*(app_ptr as *mut gtk::Application);
-        build_editor(app);
-    }
+pub fn build_editor(application: &gtk::Application){
+    let glade_src = include_str!("../../layouts/layout.glade");
+    let builder = gtk::Builder::from_string(glade_src);
+    
+    let window: gtk::ApplicationWindow = builder.object("main_window").unwrap();
+    
+    let provider = CssProvider::new();
+    provider.load_from_path("themes/Orchis-Orange/Orchis-Orange-Dark/gtk-3.0/gtk.css").unwrap();
+    
+    let context = window.style_context();
+    StyleContext::add_provider_for_screen(&gdk::Screen::default().unwrap(), &provider, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
+    
+    window.set_application(Some(application));
+    window.maximize();
+    window.show_all();
 }

@@ -11,7 +11,22 @@ fn main() {
         .application_id("org.konceptosociala.redakt")
         .build();
     
-    //~ application.connect_activate(build_editor);
-    application.connect_activate(build_scene);
+    //~ let glade_src = include_str!("../layouts/layout.glade");    
+    //~ let builder = gtk::Builder::from_string(glade_src);
+    
+    //~ let window: gtk::Window = builder.object("gl_window").unwrap();
+    //~ let gl_area: gtk::GLArea = builder.object("gl_area").unwrap();
+    
+    //~ let despero = Despero::init();
+    
+    //~ gl_area.connect_render(move |gl_area, _gl_context| {
+        
+    //~ });
+    
+    //~ window.set_application(Some(application));
+    //~ window.maximize();
+    //~ window.show_all();
+    
+    application.connect_activate(build_editor);
     application.run();
 }

@@ -1193,6 +1193,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "metio"
+version = "0.1.0"
+dependencies = [
+ "despero",
+ "gdk",
+ "glib",
+ "gtk",
+ "sourceview4",
+]
+
+[[package]]
 name = "miniz_oxide"
 version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1617,16 +1628,6 @@ dependencies = [
  "crossbeam-deque",
  "crossbeam-utils",
  "num_cpus",
-]
-
-[[package]]
-name = "redakt"
-version = "0.1.0"
-dependencies = [
- "despero",
- "glib",
- "gtk",
- "sourceview4",
 ]
 
 [[package]]
